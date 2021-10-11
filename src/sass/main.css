@@ -1,0 +1,89 @@
+@charset "UTF-8";
+/*
+ * Главный файл стилей.
+ * Все паршалы подключаются сюда.
+ */
+a {
+  text-decoration: none;
+}
+
+.search-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  border: 1px cornflowerblue solid;
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px 0;
+  background-color: cornflowerblue;
+}
+
+.search-bar__search-form {
+  background-color: cornflowerblue;
+}
+
+.search-bar__search-form input {
+  height: 30px;
+}
+
+.search-bar__search-form button {
+  height: 30px;
+}
+
+.gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 5px;
+}
+
+.photo-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px gray solid;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.load-more {
+  display: none;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 40px;
+}
+
+.info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.info b {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.info-item {
+  text-align: center;
+}
+/*# sourceMappingURL=main.css.map */
