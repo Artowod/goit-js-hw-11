@@ -28,9 +28,8 @@ document.querySelector('.search-bar__search-form').addEventListener('submit', as
     const responseData = await getServerResponse(searchUserQuery);
     //или так    getServerResponse(searchUserQuery).then(({ data }) => {}
     Notiflix.Notify.success(`Hooray! We found ${responseData.data.totalHits} images!`);
-    const galleryMarkupString = makeGalleryMarkup(responseData);
     document.querySelector('.gallery').innerHTML = '';
-    showGalleryMarkup(galleryMarkupString);
+    showGalleryMarkup(makeGalleryMarkup(responseData));
     gallery.refresh();
     document.querySelector('.load-more').style.display = 'block';
   } catch (exception) {
@@ -43,8 +42,7 @@ document.querySelector('.load-more').addEventListener('click', async e => {
   try {
     sendParam.page += 1;
     const responseData = await getServerResponse();
-    const galleryMarkupString = makeGalleryMarkup(responseData);
-    showGalleryMarkup(galleryMarkupString);
+    showGalleryMarkup(makeGalleryMarkup(responseData));
     gallery.refresh();
   } catch (exception) {
     Notiflix.Notify.warning(exception);
