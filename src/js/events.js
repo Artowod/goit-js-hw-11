@@ -1,3 +1,4 @@
+import _ from 'lodash.throttle';
 import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
@@ -53,3 +54,18 @@ document.querySelector('.load-more').addEventListener('click', async e => {
     console.log(exception);
   }
 });
+
+//-------------------------MY-------------------------
+// ------------------InfinityScroll-------------------
+/* window.addEventListener(
+  'scroll',
+  _(() => {
+    const { bottom } = document.querySelector('.gallery').getBoundingClientRect();
+    if (bottom < 1500) {
+      console.log('Next Page is loading...', bottom);
+      document.querySelector('.load-more').click();
+    }
+  }, 500),
+);
+ */
+//-----------------------------------------------------
