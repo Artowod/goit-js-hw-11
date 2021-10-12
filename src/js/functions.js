@@ -76,3 +76,14 @@ export const stateReset = function () {
   document.querySelector('.load-more').style.display = 'none';
   sendParam.page = 1;
 };
+
+export const scrollPageSmoothly = function (cardsShiftUpNumber) {
+  const { height: cardHeight } = document
+    .querySelector('.gallery')
+    .firstElementChild.getBoundingClientRect();
+
+  window.scrollBy({
+    top: cardHeight * cardsShiftUpNumber,
+    behavior: 'smooth',
+  });
+};

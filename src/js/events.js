@@ -6,6 +6,7 @@ import {
   makeGalleryMarkup,
   showGalleryMarkup,
   stateReset,
+  scrollPageSmoothly,
 } from './functions.js';
 
 const gallery = new SimpleLightbox('.gallery a');
@@ -44,6 +45,9 @@ document.querySelector('.load-more').addEventListener('click', async e => {
     const responseData = await getServerResponse();
     showGalleryMarkup(makeGalleryMarkup(responseData));
     gallery.refresh();
+    //---waiting a little bit before scrolling up until markup is shown at least partly.---
+    setTimeout(() => scrollPageSmoothly(3), 300);
+    //-------------------------------------------------------------------------------------
   } catch (exception) {
     Notiflix.Notify.warning(exception);
     console.log(exception);
