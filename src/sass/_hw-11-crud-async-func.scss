@@ -27,17 +27,14 @@ a {
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 5px;
-
 }
 
 .photo-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px gray solid;
-  border-radius: 5px;
-  //display: inline-block;
   margin: 10px;
+  box-shadow: 1px 1px 5px gray;
 }
 
 .load-more {
