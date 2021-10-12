@@ -1,8 +1,8 @@
 import '../sass/main.scss';
 import Notiflix from 'notiflix';
 import axios from 'axios';
-//import SimpleLightbox from 'simplelightbox';
-//import 'simplelightbox/dist/simple-lightbox.min.css';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 //Notiflix.Notify.success('Sol lucet omnibus');
 //Notiflix.Notify.failure('Qui timide rogat docet negare');
@@ -106,6 +106,7 @@ document.querySelector('.search-bar__search-form').addEventListener('submit', as
     const galleryMarkupString = makeGalleryMarkup(responseData);
     document.querySelector('.gallery').innerHTML = '';
     showGalleryMarkup(galleryMarkupString);
+    gallery.refresh();
     document.querySelector('.load-more').style.display = 'block';
   } catch (exception) {
     Notiflix.Notify.failure(exception);
@@ -119,8 +120,10 @@ document.querySelector('.load-more').addEventListener('click', async e => {
     const responseData = await getServerResponse();
     const galleryMarkupString = makeGalleryMarkup(responseData);
     showGalleryMarkup(galleryMarkupString);
+    gallery.refresh();
   } catch (exception) {
     Notiflix.Notify.warning(exception);
     console.log(exception);
   }
 });
+const gallery = new SimpleLightbox('.gallery a');
